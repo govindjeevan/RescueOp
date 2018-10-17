@@ -7,7 +7,7 @@ const bodyParser =require('body-parser')
 
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost/spotgo');
+mongoose.connect('mongodb://admin:sos123@ds044979.mlab.com:44979/spotgo');
 mongoose.Promise = global.Promise; 
 
 
