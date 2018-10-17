@@ -1,6 +1,11 @@
 const express=require('express');
 const router=express.Router();
 const Spot = require ('../models/spot')
+
+router.get('/',function(req,res,next){
+        res.send("HELLO");
+});
+
 router.get('/spots/all',function(req,res,next){
     Spot.find({}).then(function(spots){
         res.send(spots);
