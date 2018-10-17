@@ -22,8 +22,7 @@ app.use(function(err,req,res,next){
     res.status(422).send({error: err.message})
 })
 
-//listen for requests
-app.listen(process.env.port || 5000,function(){
-    console.log("Started Server");
-});
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
