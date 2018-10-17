@@ -5,7 +5,7 @@
 
 Install mongodb in the system
 
-    cd RescueOp		/rest
+    cd RescueOp/rest
     npm install 	//installs dependencies
     nodemon index 	//start server
 
