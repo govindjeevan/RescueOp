@@ -4,16 +4,26 @@ const mongoose=require('mongoose');
 const app=express();
 const routes=require('./routes/api')
 const bodyParser =require('body-parser')
-
+var morgan = require('morgan');  
+var passport = require('passport');  
+var config = require('./config/main');  
+var User = require('./models/user');  
+var jwt = require('jsonwebtoken');  
 
 //connect to mongoDB
-mongoose.connect('mongodb://admin:sos123@ds044979.mlab.com:44979/spotgo');
+mongoose.connect(config.database); 
 mongoose.Promise = global.Promise; 
 
 
+require('./config/passport')(passport);  
+app.use(passport.initialize());  
+
+
 // body parser before routes since it needs to extract data before url is routed
+app.use(bodyParser.urlencoded({ extended: false }));  
 app.use(bodyParser.json());
 
+app.use(morgan('dev'));  
 app.use('/api',routes);
 
 // erro handling middle-ware
