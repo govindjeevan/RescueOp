@@ -30,6 +30,11 @@ const SpotSchema = new Schema({
         type: Number,
         default: 1
     },
+
+    contact:{
+        type: String,
+        required: [true, "Phone Number is Required"]
+    },
     rescued:{
         type: Boolean,
         default: false

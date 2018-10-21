@@ -78,7 +78,7 @@ router.get('/spots', function(req, res, next){
      {
       'type': 'Point',
        'coordinates': [parseFloat(req.query.lng), parseFloat(req.query.lat)] }, 
-       maxDistance: 10000000, 
+       maxDistance: parseFloat(req.query.dist), 
        spherical: true, 
        distanceField: "dis" 
       }
