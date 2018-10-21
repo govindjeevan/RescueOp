@@ -69,9 +69,13 @@ The Rescue Team app will enable a user to sign up as a rescuer, subject to appro
 >    localhost:5000/api/spots/
 
     {
-    	"name": "Govind",
-    	"geometry": {"coordinates": [-79.789,25.01]}
+	"name": "Govind",
+	"contact": "9495591168",
+	"geometry": {"coordinates": [-79.789,25.01]}
     }
+Count defaults to 1.
+Rescued defaults to false.
+
 
 ## GET
 
@@ -81,7 +85,9 @@ The Rescue Team app will enable a user to sign up as a rescuer, subject to appro
 
 ### Spots near a Centre Point
 
-> localhost:5000/api/spots/?lng=-80&lat=25
+> http://localhost:3000/api/spots/?lng=-80&lat=25&dist=100000
+
+All spots within a circle centred at [-80,25]=[lng,lat] with a radius of 100,000 mts
 
 ## PUT
 
