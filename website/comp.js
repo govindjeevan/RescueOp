@@ -16,8 +16,6 @@ fetch(url ,{mode: 'cors'}).then(function(data){
     }                                              
 division.appendChild(node);
 console.log(res[0].geometry.coordinates);
-    
-});
 
 var mymap = L.map('mapin').setView([51.505, -0.09], 13);
 
@@ -30,4 +28,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: accessToken
 }).addTo(mymap);
 
-console.log(res);
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+}).addTo(mymap);
+
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+marker.bindPopup("<b>Please help!</b><br>These are my co-ordinates.").openPopup();
+    
+});
