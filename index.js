@@ -12,9 +12,7 @@ var jwt = require('jsonwebtoken');
 
 //connect to mongoDB
 mongoose.connect(config.database); 
-mongoose.Promise = global.Promise;
-
-app.use(express.static('public'));
+mongoose.Promise = global.Promise; 
 
 
 require('./config/passport')(passport);  
